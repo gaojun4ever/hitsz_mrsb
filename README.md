@@ -9,7 +9,7 @@ https://zhuanlan.zhihu.com/p/373688337
 https://www.cnblogs.com/lfri/p/10542797.html
 
 #### 1. 填写用户信息：users.ini
-
+*注意不要加双引号如"abcdefg"，只需要写abcdefg即可*
 ```
 name = xx
 account = xxx
