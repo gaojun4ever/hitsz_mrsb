@@ -6,6 +6,7 @@ import logging
 from configparser import ConfigParser
 from urllib.parse import quote
 
+import time
 import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -64,11 +65,13 @@ class Reporter(object):
         account_input.send_keys(account)
         password_input.send_keys(password)
         submit_button.click()
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.part_action_left')))
+        time.sleep(1)
+        print(driver.page_source)
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.xg_qzzb_content')))
 
-        mrsb_button = driver.find_element(By.CSS_SELECTOR, 'div.part_action_left')
-        mrsb_button.click()
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div#mask.daily_report_all')))
+        # mrsb_button = driver.find_element(By.CSS_SELECTOR, 'div.part_action_left')
+        # mrsb_button.click()
+        # WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div#mask.daily_report_all')))
 
 
         cookies = driver.get_cookies()[-1]
