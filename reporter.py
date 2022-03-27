@@ -65,8 +65,6 @@ class Reporter(object):
         account_input.send_keys(account)
         password_input.send_keys(password)
         submit_button.click()
-        time.sleep(1)
-        print(driver.page_source)
         WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.xg_qzzb_content')))
 
         # mrsb_button = driver.find_element(By.CSS_SELECTOR, 'div.part_action_left')
